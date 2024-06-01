@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+    
+        
+        <record id="crm_model_crm_lead_rule" model="ir.rule">
+            <field name="name">CRM sales - team</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="global" eval="True" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />
+            <field name="domain_force">['|',('user_id','=',user.id),('team_id.user_id','=',user.id)]</field>
+            <field name="active" eval="True" />
+        </record>
+        
+    
+    </data>
+    
+</odoo>
